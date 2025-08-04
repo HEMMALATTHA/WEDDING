@@ -133,10 +133,8 @@ def auth():
 
 @app.route('/')
 def home():
-    if 'user' not in session:
-        flash("Please login first.", "warning")
-        return redirect(url_for('auth'))
-    return render_template('home.html', user=session['user'])
+  
+    return render_template('home.html')
 @app.route('/buy/<int:card_id>')
 def buy(card_id):
     card = next((c for c in cards_data if c['id'] == card_id), None)
