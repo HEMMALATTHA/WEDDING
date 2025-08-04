@@ -1,0 +1,206 @@
+/* ===== General Layout ===== */
+.buy-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.main-buy-image {
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.info-section {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px 30px;
+  border-radius: 12px;
+}
+
+/* ===== SKU & Price ===== */
+.sku {
+  background-color: #d9cfc5;
+  display: inline-block;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.price {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.price span {
+  color: #000;
+  font-weight: normal;
+}
+
+/* ===== Quantity Selector ===== */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.qty-btn {
+  background-color: orange;
+  color: white;
+  font-size: 20px;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#quantity {
+  font-weight: bold;
+  width: 25px;
+  text-align: center;
+}
+
+/* ===== Buttons ===== */
+.buttons {
+  margin: 20px 0;
+  display: flex;
+  gap: 15px;
+}
+.buy-btn,
+.add-btn {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.add-btn {
+  background-color: #444;
+}
+
+/* ===== Variants ===== */
+.variants {
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.variants img {
+  width: 250px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}
+
+/* ===== Description & Info ===== */
+.desc-section {
+  padding: 40px 60px;
+  background-color: #ebe9f8;
+  display: flex;
+  gap:100px;
+}
+.desc-section h2,
+.desc-section h3 {
+  font-weight: 700;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+.desc-section ul {
+  padding-left: 20px;
+  font-size: 20px;
+}
+.desc-section p {
+  font-size: 22px;
+  line-height: 1.6;
+}
+.weddetails{
+    color:black;
+    background-color: #ffab0d;
+    border-radius: 15%;
+    padding:10px;
+    border:none;
+    font-size: 20px;
+    width:300px;
+    max-width:100%;
+}
+/* ===== Related Cards Section ===== */
+.related-section {
+  background-color: #ebe9f8;
+  padding: 40px 60px;
+}
+.addinfo{
+    margin-right: 150px;
+}
+.related-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.related-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: flex-start;
+}
+
+.related-card {
+  width: 250px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.related-card:hover {
+  transform: scale(1.05);
+  background-color: #ffe5b4;
+}
+.related-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+.related-card p {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+/* ===== Responsive Media Queries ===== */
+@media (min-width: 300px) and (max-width: 600px) {
+  .buy-container, .desc-section, .related-section {
+    padding: 20px 15px;
+  }
+
+  .related-grid {
+    justify-content: center;
+  }
+
+  .info-section {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .buy-container, .desc-section, .related-section {
+    padding: 30px;
+  }
+
+  .related-card {
+    width: 45%;
+  }
+}

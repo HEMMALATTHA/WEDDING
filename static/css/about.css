@@ -1,0 +1,109 @@
+/* ---------- Heading ---------- */
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* ---------- Main Sections ---------- */
+.about-container, .story-container, .promise-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 40px;
+}
+
+.about-text, .story-text, .promise-text {
+    flex: 1;
+}
+
+.about-image, .story-image, .promise-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img, .story-image img, .promise-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.about-subtitle, .story-heading, .promise-heading {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.about-description, .story-description, .promise-list {
+    font-size: 26px;
+    line-height: 1.6;
+}
+
+/* ---------- Media Query 1: Tablet ---------- */
+@media (max-width: 992px) {
+    .about-container, .story-container, .promise-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text, .story-text, .promise-text {
+        order: 1;
+    }
+
+    .about-image, .story-image, .promise-image {
+        order: 2;
+    }
+}
+
+/* ---------- Media Query 2: Mobile ---------- */
+@media (max-width: 576px) {
+    .about-subtitle, .story-heading, .promise-heading {
+        font-size: 20px;
+    }
+
+    .about-description, .story-description, .promise-list {
+        font-size: 16px;
+    }
+
+    .about-container, .story-container, .promise-container {
+        padding: 20px;
+    }
+}
+
+/* ---------- Join Section ---------- */
+.join-section {
+    background-color: #e6e6f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.join-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.join-heading {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.join-description {
+    font-size: 26px;
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* ---------- Join Section Responsive ---------- */
+@media (max-width: 768px) {
+    .join-heading {
+        font-size: 22px;
+    }
+
+    .join-description {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+}

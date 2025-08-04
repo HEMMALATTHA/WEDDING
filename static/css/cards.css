@@ -1,0 +1,69 @@
+  .cards-title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 800;
+        margin-top: 20px;
+        color: black;
+    }
+
+    .card-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px 10px;
+        gap: 60px;
+        margin-bottom: 40px;
+    }
+
+    .card-box {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        width: 250px;
+        height:300px;
+        padding: 15px;
+        text-align: center;
+        transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .card-box:hover {
+        transform: scale(1.03);
+        background-color: #ffe5b4;
+    }
+
+    .card-box img {
+        width: 100%;
+        height: 230px;
+        border-radius: 10px;
+    }
+
+    .card-box p {
+        margin-top: 12px;
+        font-weight: bold;
+        font-size: 16px;
+        color: #000;
+    }
+
+   @media screen and (max-width: 600px) and (min-width: 300px) {
+    .card-box {
+        width: 90%;
+    }
+
+    .cards-title {
+        font-size: 24px;
+    }
+}
+
+/* ✅ Tablet: 601px to 768px — 2 cards per row */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .card-box {
+        width: 45%;
+    }
+}
+
+/* ✅ Default (desktop > 768px) — 3 to 4 cards per row */
+@media screen and (min-width: 769px) {
+    .card-box {
+        width: 250px; /* default width stays */
+    }
+}

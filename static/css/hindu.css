@@ -1,0 +1,224 @@
+.page-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  margin: 20px 0;
+  color: black;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  width: 270px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  background-color: #ffe5b4;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 270px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  object-fit: cover;
+}
+
+.heart-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  color: gray;
+  border: none;
+  font-size: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.heart-btn.active {
+  color: darkred;
+}
+
+.card-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-info .price {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #b30000;
+}
+
+/* 300px to 600px — 1 card per row */
+@media screen and (max-width: 600px) and (min-width: 300px) {
+  .card {
+    width: 90%;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+}
+
+/* 601px to 768px — 2 cards per row */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .card {
+    width: 45%;
+  }
+}
+
+
+/* 📦 Buy Page Layout */
+.buy-card {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  padding: 25px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.buy-img-wrapper {
+  flex: 1;
+  position: relative;
+  max-width: 400px;
+}
+
+.buy-img-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.buy-heart-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #fff;
+  color: gray;
+  border: none;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 10;
+}
+
+.buy-heart-btn.active {
+  color: darkred;
+}
+
+.buy-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buy-info h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.buy-price {
+  font-size: 22px;
+  color: #b30000;
+  font-weight: 600;
+}
+
+.buy-shortdesc {
+  font-size: 16px;
+  margin: 15px 0;
+  color: #444;
+}
+
+.buy-specs {
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.buy-specs p {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+/* 🔘 Wedding Details Button */
+.wedding-details-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #cc3366;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.wedding-details-btn:hover {
+  background-color: #a82850;
+}
+
+/* ✅ Responsive for Mobile: 300px – 600px */
+@media screen and (max-width: 600px) and (min-width: 300px) {
+  .buy-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .buy-img-wrapper {
+    max-width: 100%;
+  }
+
+  .buy-info {
+    align-items: center;
+  }
+
+  .wedding-details-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ✅ Tablet: 601px – 768px */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .buy-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buy-info {
+    align-items: center;
+  }
+}

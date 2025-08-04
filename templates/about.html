@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Wed Knot Craft - About Us{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+
+{% block content %}
+ <h1 class="about-heading">ABOUT US</h1>
+<section class="about-section" id="about-us">
+    <div class="about-container">
+        <div class="about-text">
+            <!-- <h2 class="about-heading">ABOUT US</h2> -->
+            <h3 class="about-subtitle">Celebrating Love, One Invitation at a Time</h3>
+            <p class="about-description">At Wed Knot Craft, we believe that every love story is unique and deserves to be celebrated in a way that reflects its individuality.</p>
+        </div>
+        <div class="about-image">
+            <img src="{{ url_for('static', filename='images/abt1.png') }}" alt="About Image">
+        </div>
+    </div>
+</section>
+
+<section class="story-section" id="our-story">
+    <div class="story-container">
+        <div class="story-image">
+            <img src="{{ url_for('static', filename='images/abt2.png') }}" alt="Story Image">
+        </div>
+        <div class="story-text">
+            <h2 class="story-heading">OUR STORY</h2>
+            <p class="story-description">
+                What started as a passion for design has blossomed into a full-fledged business dedicated to bringing couples' visions to life. Our founder, [Founder's Name], envisioned a platform where couples could find invitations that resonated with their personal style and cultural heritage.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="promise-section" id="our-promise">
+    <div class="promise-container">
+        <div class="promise-text">
+            <h2 class="promise-heading">OUR PROMISE</h2>
+            <ul class="promise-list">
+                <li><strong>Custom Designs:</strong> Tailored invitations that reflect your unique love story.</li>
+                <li><strong>Quality Craftsmanship:</strong> Invitations crafted with attention to detail and high-quality materials.</li>
+                <li><strong>Customer Satisfaction:</strong> A seamless experience from selection to delivery, ensuring your complete satisfaction.</li>
+            </ul>
+        </div>
+        <div class="promise-image">
+            <img src="{{ url_for('static', filename='images/abt3.png') }}" alt="Promise Image">
+        </div>
+    </div>
+</section>
+<section class="join-section" id="join-us">
+    <div class="join-container">
+        <h2 class="join-heading">JOIN Us in Celebrating Your Special Day</h2>
+        <p class="join-description">
+            Explore our diverse range of designs and let us help you set the tone for your wedding celebration.
+            At <strong>[ Your Company Name ]</strong>, your love story is our inspiration.
+        </p>
+    </div>
+</section>
+
+
+{% endblock %}

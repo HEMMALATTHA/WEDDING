@@ -1,0 +1,112 @@
+.main-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-buttons button {
+  flex: 1;
+  padding: 10px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab-buttons .active-tab {
+  border-bottom: 3px solid black;
+}
+
+.form-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+    width: 50%;           /* or 300px */
+  max-width: 300px;
+}
+
+button[type="submit"] {
+  background: #c62828;
+  color: white;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+   width: 50%;           /* or 300px */
+  max-width: 300px;
+}
+
+.forgot-link {
+  text-align: center;
+  margin-top: 10px;
+  color: #c62828;
+  display: block;
+  text-decoration: none;
+  margin-right: 300px;
+}
+
+.flash-msg {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.flash-msg li {
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.success { background: #d4edda; color: #155724; }
+.danger { background: #f8d7da; color: #721c24; }
+.warning { background: #fff3cd; color: #856404; }
+.info    { background: #d1ecf1; color: #0c5460; }
+
+/* Media Query 1: Mobile */
+@media screen and (max-width: 600px) {
+  .main-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .tab-buttons button {
+    font-size: 16px;
+  }
+}
+
+/* Media Query 2: Tablet */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .main-container {
+    margin: 30px;
+    padding: 25px;
+  }
+}

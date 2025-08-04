@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Wed Knot Craft - Wedding Cards{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<h1 class="cards-title">WEDDING CARDS</h1>
+ <div class="card-section">
+   <a href="{{ url_for('hindu') }}"><div class="card-box"><img src="{{ url_for('static', filename='images/hindu.png') }}" alt=""><p>Hindu Wedding Cards</p></div></a> 
+    <div class="card-box"><img src="{{ url_for('static', filename='images/christian.png') }}" alt=""><p>Christian Wedding Cards</p></div>
+    <div class="card-box"><img src="{{ url_for('static', filename='images/muslim.png') }}" alt=""><p>Muslim Wedding Cards</p></div>
+    <div class="card-box"><img src="{{ url_for('static', filename='images/sikh.png') }}" alt=""><p>Sikh Wedding Cards</p></div>
+  </div>
+  <div class="card-section">
+    <div class="card-box"><img src="{{ url_for('static', filename='images/inter.png') }}" alt=""><p>Interfaith Wedding Cards</p></div>
+    <div class="card-box"><img src="{{ url_for('static', filename='images/exclusive.png') }}" alt=""><p>Exclusive Wedding Cards</p></div>
+    <div class="card-box"><img src="{{ url_for('static', filename='images/traditional.png') }}" alt=""><p>Traditional Wedding Cards</p></div>
+    <div class="card-box"><img src="{{ url_for('static', filename='images/all.png') }}" alt=""><p>All Wedding Cards</p></div>
+  </div>
+
+  <div class="card-section">
+    <div class="card-box"><img src="{{ url_for('static', filename='images/newstyle.png') }}" alt=""><p>New Style Wedding Cards</p></div>
+    <div class="card-box"><img src="{{ url_for('static', filename='images/envelope.png') }}" alt=""><p>Envelope Wedding Cards</p></div>
+    <div class="card-box"><img src="{{ url_for('static', filename='images/elegant.png') }}" alt=""><p>Elegant Faith Wedding Cards</p></div>
+    <div class="card-box"><img src="{{ url_for('static', filename='images/nepal.png') }}" alt=""><p>Nepali Wedding Cards</p></div>
+  </div>
+
+ 
+
+{% endblock %}

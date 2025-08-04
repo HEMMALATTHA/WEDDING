@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}{{ card.title }}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/buy.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="buy-container">
+  <div class="image-section">
+    <img src="{{ url_for('static', filename=card.image) }}" alt="{{ card.title }}" class="main-buy-image">
+  </div>
+
+  <div class="info-section">
+    <div class="sku">SKU Code: KSN{{ '%04d' % card.id }}</div>
+    <div class="price">Rs. {{ '%.2f'|format(card.price) }} <span>per unit inclusive of all taxes</span></div>
+
+    <form action="{{ url_for('ordersummary') }}" method="POST">
+      <div class="quantity-selector">
+        QTY:
+        <button type="button" class="qty-btn" onclick="decreaseQty()">−</button>
+        <span id="quantity">1</span>
+        <button type="button" class="qty-btn" onclick="increaseQty()">+</button>
+      </div>
+
+      <!-- Hidden Inputs -->
+      <input type="hidden" name="product" value="{{ card.title }}">
+      <input type="hidden" name="price" value="{{ card.price }}">
+      <input type="hidden" name="compliment" value="Thank You Tag">
+      <input type="hidden" name="image" value="{{ card.image }}">
+      <input type="hidden" name="qty" id="qty-input" value="1">
+
+      <div class="buttons">
+        <button type="submit" class="buy-btn">Buy Now</button>
+        <button type="button" class="add-btn">Add to Cart</button>
+      </div>
+    </form>
+
+    <div class="variants">
+      Variants (Same size & material but different color/Theme)
+      <img src="{{ url_for('static', filename='images/all.png') }}" alt="variant">
+    </div>
+  </div>
+</div>
+
+<div class="desc-section">
+  <div>
+    <h2>DESCRIPTION:</h2>
+    <p>The {{ card.title }} has embossed floral design with customized initial acrylic nameplate.</p>
+    <p>This invitation card has holding insert and an envelope.</p>
+
+    <h3>ADDITIONAL COMMENTS</h3>
+    <p>Discounts are applied based on quantity at checkout</p>
+  </div>
+
+  <div class="addinfo">
+    <h3>ADDITIONAL INFORMATION</h3>
+    <ul>
+      <li>Height: 27.5 cm</li>
+      <li>Width: 21 cm</li>
+      <li>Weight: 110 g</li>
+    </ul>
+    <button class="weddetails">The Wedding Details</button>
+  </div>
+</div>
+
+<div class="related-section">
+  <h2>Related Cards</h2>
+  <div class="related-grid">
+    {% for rel in related %}
+    <div class="related-card">
+      <a href="{{ url_for('buy', card_id=rel.id) }}">
+        <img src="{{ url_for('static', filename=rel.image) }}" alt="{{ rel.title }}">
+        <p>{{ rel.title }}</p>
+        <p>Rs. {{ '%.2f'|format(rel.price) }}</p>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+let qty = 1;
+function updateQtyDisplay() {
+  document.getElementById("quantity").innerText = qty;
+  document.getElementById("qty-input").value = qty;
+}
+function increaseQty() {
+  qty++;
+  updateQtyDisplay();
+}
+function decreaseQty() {
+  if (qty > 1) {
+    qty--;
+    updateQtyDisplay();
+  }
+}
+</script>
+{% endblock %}

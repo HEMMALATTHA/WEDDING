@@ -1,0 +1,168 @@
+
+
+.summary-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.payment-panel, .order-panel {
+  flex: 1;
+  padding: 20px;
+  min-width: 300px;
+}
+
+.payment-panel {
+  background: #f9f9f9;
+  border-right: 1px solid #ddd;
+}
+
+.icons img {
+  margin: 5px;
+  width: 45px;
+}
+
+.upi-block {
+  margin-top: 20px;
+}
+
+.upi-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.cod-section {
+  margin: 20px 0;
+}
+
+.cod-section button {
+  width: 100%;
+  background: #666;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+}
+
+.credit-note {
+  background: #eef;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.order-panel .datetime p {
+  margin: 5px 0;
+}
+
+.product-box h2 {
+  margin-top: 15px;
+}
+
+.product-line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.compliment {
+  margin: 10px 0;
+}
+
+.summary-img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+  border-radius: 6px;
+}
+
+.coupon-bar {
+  display: flex;
+  justify-content: space-between;
+  background: #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.green {
+  color: green;
+  font-weight: bold;
+}
+
+.pricing {
+  margin-top: 15px;
+}
+
+.price {
+  float: right;
+  font-weight: bold;
+}
+p{
+    font-size: 20px;
+}
+.free-label {
+  font-size: 12px;
+  background: #ccc;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.icons i {
+  margin-right: 15px;
+  color: #007bff;
+}
+.pay-now-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pay-now {
+  background-color: #ffab0d;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 60%;
+  transition: background-color 0.3s;
+}
+
+.pay-now:hover {
+  background-color: #0056b3;
+}
+
+/* 300–600px */
+@media (max-width: 600px) {
+  .summary-wrapper {
+    flex-direction: column;
+  }
+  .payment-panel, .order-panel {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+/* 601–768px */
+@media (min-width: 601px) and (max-width: 768px) {
+  .summary-wrapper {
+    flex-direction: row;
+  }
+
+  .payment-panel, .order-panel {
+    padding: 15px;
+  }
+
+  .summary-img {
+    width: 100%;
+  }
+}

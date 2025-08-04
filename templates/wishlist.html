@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Wed Knot Craft - Wishlist{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/hindu.css') }}">
+{% endblock %}
+
+{% block content %}
+  <h1 class="page-title">MY WISHLIST</h1>
+  <div class="card-grid">
+    {% for card in cards %}
+    <div class="card">
+      <div class="img-wrapper">
+        <img src="{{ url_for('static', filename=card.image) }}" alt="{{ card.title }}">
+      </div>
+      <div class="card-info">
+        <h3>{{ card.title }}</h3>
+        <p class="price">Rs. {{ '%.2f'|format(card.price) }}</p>
+      </div>
+    </div>
+    {% else %}
+    <p style="width:100%; text-align:center;">No items in wishlist.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

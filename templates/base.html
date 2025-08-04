@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Wed Knot Craft{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ {% block head %}{% endblock %}
+  </head>
+<body>
+ <!-- 🌸 Top Navbar -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <div><img src="{{ url_for('static', filename='images/logo.png') }}" class="logo-image" alt="Logo">
+          <div class="cherish-overlay">Cherish<br> By</div>
+  </div>
+  <div class="logo-text">
+    <div class="wedknot">
+      <span>Wed</span>
+      <span class="knot">Knot</span>
+      <span class="craft">Craft</span>
+    </div>
+  </div>
+</div>       
+      <div class="nav-search">
+       <a href="{{ url_for('search') }}"><input type="text" placeholder="Search..."></a> 
+        <button ><img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search"class="navsearchbtn"></button>
+      </div>
+   
+      <div class="nav-icons">
+        <a class="icon-button" href="{{ url_for('auth') }}"><img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="User"></a>
+        <a class="icon-button" href="{{ url_for('wishlist') }}"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="Wishlist"></a>
+        <a class="icon-button" href="#"><img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Cart"></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🌸 Bottom Menu -->
+  <nav class="nav-menu-bar">
+    <ul class="nav-menu">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('cards') }}">Wedding Invitation</a></li>
+
+      <!-- Dropdown: Special Occasions -->
+      <li class="dropdown">
+        <input type="checkbox" id="special-toggle">
+        <label for="special-toggle">Special Occasions</label>
+        <ul class="dropdown-menu">
+          <li><a href="#">Birthday Invitations</a></li>
+          <li><a href="#">Anniversary</a></li>
+          <li><a href="#">Puberty Cards</a></li>
+           <li><a href="#">Ear Boring</a></li>
+            <li><a href="#">Engagement</a></li>
+             <li><a href="#">House Warming</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Theme Cards</a></li>
+
+      <!-- Dropdown: Scroll Invitation -->
+      <li class="dropdown">
+        <input type="checkbox" id="scroll-toggle">
+        <label for="scroll-toggle">Scroll Invitation</label>
+        <ul class="dropdown-menu">
+          <li><a href="#">Small size Scroll</a></li>
+          <li><a href="#">Box Scroll</a></li>
+          <li><a href="#">Only Scroll</a></li>
+            <li><a href="#">High End Scroll</a></li>
+        </ul>
+      </li>
+
+      <li class="active"><a href="#">Digital Invitation</a></li>
+    </ul>
+  </nav>
+   
+   
+ 
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+  
+    <!-- ✅ FOOTER -->
+<footer class="custom-footer">
+  <div class="footer-container">
+    <div class="footer-logo-section">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" class="footer-logo" alt="Logo">
+     
+      <div class="footer-logo-text">Wed<br>Knot<br>Craft</div>
+      <p class="footer-caption">Largest Wedding Cards<br>Collections in Chennai</p>
+      <div class="footer-social">
+        <span>Follow us with</span>
+        <div class="footer-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h1>Information</h1>
+      <ul>
+        <li><a href="{{ url_for('about') }}">About Us</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+        <li><a href="{{ url_for('howtoorder') }}">How to order wedding invitation online?</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h1>Quick Access</h1>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('cards') }}">Wedding Cards</a></li>
+        <li><a href="{{ url_for('hindu') }}">Hindu Wedding Cards</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact-section">
+      <h1>Contact Us</h1>
+      <p><img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone"> +91 9876543210</p>
+      <p><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"> wedtype@weddingcards.com</p>
+      <p>Operating hours: 10.00Am to 10.00Pm</p>
+      <p><strong>Monday - Sunday</strong></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p><img src="https://cdn-icons-png.flaticon.com/512/929/929564.png" alt="copyright" class="copyright-icon">
+    Wed Knot Craft India Private Limited. All Rights Reserved.</p>
+  </div>
+</footer>
+
+    <!-- JS
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script> -->
+</body>
+</html>

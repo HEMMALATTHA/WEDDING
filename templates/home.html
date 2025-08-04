@@ -1,0 +1,255 @@
+{% extends "base.html" %}
+
+{% block title %}Wed Knot Craft - Home{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock %}
+
+
+{% block content %}
+<div class="promo-banner">
+  <a href="#" class="promo-button">Get Your Style</a>
+</div>
+<div class="next-image-section" id="next-bg-only"></div>
+
+<section class="unique-section-wrapper" id="unique-invitations">
+  <div class="unique-section-header">
+    <h2 class="unique-section-title">Unique & Exclusive Invitation Cards</h2>
+    <p class="unique-section-subtitle">Because Each Wedding is Truly Unique and Memorable</p>
+  </div>
+
+  <div class="unique-card-gallery">
+    <div class="unique-card-item">
+      <img src="{{ url_for('static', filename='images/editable.png') }}" alt="Card 1">
+      <h3>Hindu Wedding Cards</h3>
+    </div>
+    <div class="unique-card-item">
+      <img src="{{ url_for('static', filename='images/unique2.png') }}" alt="Card 2">
+      <h3>Luxury Cards</h3>
+    </div>
+    <div class="unique-card-item">
+      <img src="{{ url_for('static', filename='images/blue.png') }}" alt="Card 3">
+      <h3>Floral Wedding Cards</h3>
+    </div>
+  </div>
+</section>
+<section class="theme-section-wrapper" id="theme-invitations">
+  <div class="theme-section-header">
+    <h2 class="theme-section-title">Theme Based Invitation</h2>
+  </div>
+
+  <div class="theme-card-gallery">
+    <div class="theme-card-item">
+      <img src="{{ url_for('static', filename='images/beach.png') }}" alt="Beach Theme">
+      <p class="theme-card-caption">Beach Theme Cards</p>
+    </div>
+    <div class="theme-card-item">
+      <img src="{{ url_for('static', filename='images/birds.png') }}" alt="Birds Theme">
+      <p class="theme-card-caption">Birds Theme Cards</p>
+    </div>
+    <div class="theme-card-item">
+      <img src="{{ url_for('static', filename='images/palace.png') }}" alt="Palace Theme">
+      <p class="theme-card-caption">Palace Theme Cards</p>
+    </div>
+  </div>
+</section>
+ <section class="offer-section" id="offerContainer">
+    <img src="{{ url_for('static', filename='images/home5.PNG') }}" alt="Wedding Offer Image" class="responsive-offer-img">
+  </section>
+
+  <section class="card-gallery-section" id="gallerySection">
+    <h2 class="section-heading" id="galleryHeading">Simple and Affordable Wedding Cards</h2>
+
+    <div class="card-grid" id="cardGrid">
+
+      <!-- Card 1 -->
+      <div class="card-box" id="card1">
+        <img src="{{ url_for('static', filename='images/redwhite.png') }}" alt="Red Invite" class="card-img">
+        <h3 class="card-title">Red Invite Card with Bride And Groom Names</h3>
+        <p class="card-price">Rs.10.25</p>
+        <div class="card-icons">
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+
+    
+
+      <!-- Example Card 2 -->
+      <div class="card-box" id="card2">
+        <img src="{{ url_for('static', filename='images/redyellow.png') }}" alt="Red and Yellow Invite" class="card-img">
+        <h3 class="card-title">Simple Red and Yellow Card Invite with Bride And Groom Names</h3>
+        <p class="card-price">Rs.5.00</p>
+        <div class="card-icons">
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+
+       <!-- Example Card 2 -->
+      <div class="card-box" id="card2">
+        <img src="{{ url_for('static', filename='images/goldenred.png') }}" alt="Red and Yellow Invite" class="card-img">
+        <h3 class="card-title">Red Vertical personal Invite with Bride And Groom Names</h3>
+        <p class="card-price">Rs.7.00</p>
+        <div class="card-icons">
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+       <!-- Example Card 2 -->
+      <div class="card-box" id="card2">
+        <img src="{{ url_for('static', filename='images/gate.png') }}" alt="Red and Yellow Invite" class="card-img">
+        <h3 class="card-title">Red Vertical personal Invite  Invite with Bride And Groom Names</h3>
+        <p class="card-price">Rs.7.50</p>
+        <div class="card-icons">
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+       <!-- Example Card 2 -->
+      <div class="card-box" id="card2">
+        <img src="{{ url_for('static', filename='images/vinayaga.jpg') }}" alt="Red and Yellow Invite" class="card-img">
+        <h3 class="card-title">Brown with Vinayagar picture Invite with Bride And Groom Names</h3>
+        <p class="card-price">Rs.7.00</p>
+        <div class="card-icons">
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+       <!-- Example Card 2 -->
+      <div class="card-box" id="card2">
+        <img src="{{ url_for('static', filename='images/maroon.png') }}" alt="Red and Yellow Invite" class="card-img">
+        <h3 class="card-title">Maroon card with Rangoli Theme Invite with Bride And Groom Names</h3>
+        <p class="card-price">Rs.9.00</p>
+        <div class="card-icons">
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+
+      <!-- Add remaining cards similarly -->
+
+    </div>
+  </section>
+
+   <section class="summer-sale-container" id="summerSection">
+    <img src="{{ url_for('static', filename='images/home8.PNG') }}" 
+         alt="Summer Sale Banner" 
+         class="summer-sale-img" 
+         id="summerSaleImg">
+  </section>
+
+  <section id="religionSection" class="religion-section">
+    <div class="religion-grid" id="religionGrid">
+
+      <!-- Hindu Card -->
+      <div class="religion-card" id="cardHindu">
+        <img src="{{ url_for('static', filename='images/new1.PNG') }}" alt="Hindu Wedding" class="religion-img">
+        <div class="religion-info">
+          <h3 class="religion-title">Hindu Invitation Collections</h3>
+          <button class="buy-btn" id="buyHindu">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Christian Card -->
+      <div class="religion-card" id="cardChristian">
+        <img src="{{ url_for('static', filename='images/new4.PNG') }}" alt="Christian Wedding" class="religion-img">
+        <div class="religion-info">
+          <h3 class="religion-title">Christian Invitation Collections</h3>
+          <button class="buy-btn" id="buyChristian">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Muslim Card -->
+      <div class="religion-card" id="cardMuslim">
+        <img src="{{ url_for('static', filename='images/new3.PNG') }}" alt="Muslim Wedding" class="religion-img">
+        <div class="religion-info">
+          <h3 class="religion-title">Muslim Invitation Collections</h3>
+          <button class="buy-btn" id="buyMuslim">Buy Now</button>
+        </div>
+      </div>
+
+      <!-- Interfaith Card -->
+      <div class="religion-card" id="cardInterfaith">
+        <img src="{{ url_for('static', filename='images/new2.PNG') }}" alt="Interfaith Wedding" class="religion-img">
+        <div class="religion-info">
+          <h3 class="religion-title">Interfaith Invitation Collections</h3>
+          <button class="buy-btn" id="buyInterfaith">Buy Now</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+<h2 class="testi">What Client Say About Us</h2>
+   <section class="testimonial-section">
+    
+        <div class="testimonial-card" id="card-james">
+            <img src="{{ url_for('static', filename='images/user1.jpg') }}" alt="James" class="testimonial-img">
+            <h3 class="testimonial-name">James</h3>
+            <h4 class="testimonial-title">Absolutely beautiful invites!</h4>
+            <p class="testimonial-text">
+                We were blown away by the quality and elegance of our wedding invitations. The paper felt luxurious, and the printing was flawless. Everyone keeps asking where we got them from!
+            </p>
+            <div class="testimonial-stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+        </div>
+
+        <div class="testimonial-card" id="card-harshitha">
+            <img src="{{ url_for('static', filename='images/user2.jpg') }}" alt="Harshitha" class="testimonial-img">
+            <h3 class="testimonial-name">Harshitha</h3>
+            <h4 class="testimonial-title">Customized to perfection</h4>
+            <p class="testimonial-text">
+                We wanted something simple but unique, and they absolutely nailed it. Colors, fonts, wording — everything was exactly how we imagined. Fast turnaround too!
+            </p>
+            <div class="testimonial-stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+        </div>
+
+        <div class="testimonial-card" id="card-santhosh">
+            <img src="{{ url_for('static', filename='images/user3.jpg') }}" alt="Santhosh" class="testimonial-img">
+            <h3 class="testimonial-name">Santhosh</h3>
+            <h4 class="testimonial-title">Great quality at a great price.</h4>
+            <p class="testimonial-text">
+                We were on a tight budget, but didn’t want to compromise on style. These invites were not only affordable but looked premium. Arrived quickly and packaged beautifully
+            </p>
+            <div class="testimonial-stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+        </div>
+    </section>
+
+    <section class="howitworks-section">
+    <h2 class="howitworks-title">How It Works</h2>
+    <div class="howitworks-steps">
+
+        <div class="howitworks-step" id="step-order">
+            <i class="fas fa-file-alt step-icon"></i>
+            <p class="step-label">Order Sample</p>
+        </div>
+
+        <div class="howitworks-step" id="step-sample">
+            <i class="fas fa-calendar-day step-icon"></i>
+            <p class="step-label">Get Sample Order In 5 days</p>
+        </div>
+
+        <div class="howitworks-step" id="step-approve">
+            <i class="fas fa-clipboard-check step-icon"></i>
+            <p class="step-label">Approve Digital Draft</p>
+        </div>
+
+        <div class="howitworks-step" id="step-bulk">
+            <i class="fas fa-box-open step-icon"></i>
+            <p class="step-label">Place Your Bulk Order</p>
+        </div>
+
+        <div class="howitworks-step" id="step-deliver">
+            <i class="fas fa-truck step-icon"></i>
+            <p class="step-label">Print & Deliver</p>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
+
+
+{% endblock %}

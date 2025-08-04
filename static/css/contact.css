@@ -1,0 +1,98 @@
+
+ body {
+      max-width: 100%;
+      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+      /* background-color: #e7e5f5; */
+      color: #000;
+      padding: 20px;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .contact-wrap {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 15px;
+    }
+
+    .section-header {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .contact-text,
+    .info-paragraph,
+    .last-message,
+    .contact-info,
+    .contact-email {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    .contact-info,
+    .contact-email {
+      margin-left: 30px;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .highlight-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .contact-label {
+      font-size: 22px;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .section-header {
+        font-size: 22px;
+      }
+
+      .contact-label,
+      .contact-text,
+      .info-paragraph,
+      .contact-info,
+      .contact-email,
+      .last-message {
+        font-size: 14px;
+      }
+
+      .contact-info,
+      .contact-email {
+        margin-left: 10px;
+      }
+    }
+
+    @media (min-width: 601px) and (max-width: 768px) {
+      .section-header {
+        font-size: 24px;
+      }
+
+      .contact-label,
+      .contact-text,
+      .info-paragraph,
+      .contact-info,
+      .contact-email,
+      .last-message {
+        font-size: 16px;
+      }
+
+      .contact-info,
+      .contact-email {
+        margin-left: 15px;
+      }
+    }

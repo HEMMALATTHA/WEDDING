@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Wed Knot Craft - User{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<div class="main-container">
+    <div class="tab-buttons">
+      <button id="tab-login" onclick="showForm('login')" class="active-tab">Login</button>
+      <button id="tab-signup" onclick="showForm('signup')">Sign Up</button>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flash-msg">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <div class="form-section" id="form-login">
+      <h2 class="form-heading">Login to my Account</h2>
+      <form method="POST">
+        <label>Email</label>
+        <input type="email" name="login_email" placeholder="Enter Email" required>
+        <label>Password</label>
+        <input type="password" name="login_password" placeholder="Enter Password" required>
+        <button type="submit" name="login">Login & Continue</button>
+        <a href="#" class="forgot-link">Forgot Password</a>
+      </form>
+    </div>
+
+    <div class="form-section" id="form-signup" style="display: none;">
+      <h2 class="form-heading">New User? Sign up Now</h2>
+      <form method="POST">
+        <label>Email</label>
+        <input type="email" name="signup_email" placeholder="Enter Email" required>
+        <label>Password</label>
+        <input type="password" name="signup_password" placeholder="Enter Password" required>
+        <label>Re-Password</label>
+        <input type="password" name="signup_repassword" placeholder="Re-Enter Password" required>
+        <button type="submit" name="signup">Sign up & Continue</button>
+      </form>
+    </div>
+  </div>
+
+<script>
+  function showForm(form) {
+    document.getElementById('form-login').style.display = form === 'login' ? 'block' : 'none';
+    document.getElementById('form-signup').style.display = form === 'signup' ? 'block' : 'none';
+
+    document.getElementById('tab-login').classList.toggle('active-tab', form === 'login');
+    document.getElementById('tab-signup').classList.toggle('active-tab', form === 'signup');
+  }
+
+  window.onload = function () {
+    const params = new URLSearchParams(window.location.search);
+    const showLogin = params.get('show_login');
+    if (showLogin === 'true') {
+      showForm('login');
+    } else {
+      showForm('signup');  // default to signup
+    }
+  };
+</script>
+
+
+{% endblock %}

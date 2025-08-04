@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Wed Knot Craft - Hindu Wedding Cards{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ordersum.css') }}">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="summary-wrapper">
+
+  <!-- LEFT: PAYMENT SECTION -->
+  <div class="payment-panel">
+    <div class="icons">
+      <i class="fa-brands fa-cc-visa fa-2x"></i>
+      <i class="fa-brands fa-cc-mastercard fa-2x"></i>
+      <i class="fa-brands fa-cc-paypal fa-2x"></i>
+      <i class="fa-solid fa-building-columns fa-2x"></i>
+    </div>
+
+    <div class="upi-block">
+      <h3>Pay by UPI</h3>
+      {% for upi in ['Paytm', 'GPay', 'PhonePe', 'Cred'] %}
+      <label class="upi-option">
+        <input type="radio" name="upi" {% if loop.index == 2 %}checked{% endif %}>
+        {{ upi }}
+        {% if upi == 'Paytm' %}
+        <i class="fa-brands fa-google-pay"></i>
+        {% elif upi == 'GPay' %}
+        <i class="fa-brands fa-google-pay"></i>
+        {% elif upi == 'PhonePe' %}
+        <i class="fa-solid fa-mobile-screen"></i>
+        {% elif upi == 'Cred' %}
+        <i class="fa-solid fa-credit-card"></i>
+        {% endif %}
+      </label>
+      {% endfor %}
+    </div>
+
+    <div class="cod-section">
+      <button><i class="fa-solid fa-money-bill-wave"></i> Cash on Delivery</button>
+    </div>
+
+    <div class="credit-note">
+      <p><i class="fa-solid fa-circle-info"></i> Credit card payments may take up to 24 hours to be processed!</p>
+      <label><input type="checkbox" checked> Save my payment details</label>
+    </div>
+  </div>
+
+  <!-- RIGHT: ORDER SUMMARY SECTION -->
+  <div class="order-panel">
+    <h2>Order Summary</h2>
+    <div class="datetime">
+      <p><strong>Date:</strong> {{ product.date }}</p>
+      <p><strong>Time:</strong> {{ product.time }}</p>
+    </div>
+
+    <div class="product-box">
+      <h2>Products</h2>
+      <div class="product-line">
+        <span>{{ product.title }}</span>
+        <span>x{{ product.qty }}</span>
+      </div>
+      <div class="compliment">Added Compliment: {{ product.compliment }}</div>
+      <!-- <img src="{{ url_for('static', filename=product.image) }}" alt="product" class="summary-img"> -->
+    </div>
+
+    <div class="coupon">
+      <div class="coupon-bar">
+        <strong>{{ product.coupon }}</strong>
+        <span class="green">Coupon Applied</span>
+      </div>
+    </div>
+
+    <div class="pricing">
+      <p>Subtotal: <span class="price">Rs. {{ '%.2f'|format(product.price * product.qty) }}</span></p>
+      <p>Shipping: <span class="price">0.00 <span class="free-label">Free</span></span></p>
+    </div>
+    <div class="pay-now-container">
+  <form action="{{ url_for('orderconfirm') }}" method="GET">
+    <button class="pay-now" type="submit">
+      <i class="fa-solid fa-bolt"></i> Pay Now
+    </button>
+  </form>
+</div>
+
+  </div>
+</div>
+
+{% endblock %}

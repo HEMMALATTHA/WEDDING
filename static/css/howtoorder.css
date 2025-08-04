@@ -1,0 +1,76 @@
+   html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #e6e6fa;
+      color: #000;
+    }
+
+    .how-order-wrapper {
+      padding: 40px 60px;
+      max-width: 1200px;
+      margin: auto;
+      box-sizing: border-box;
+    }
+
+    .how-order-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: black;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .how-order-title span {
+      font-weight: 800;
+      color: black;
+    }
+
+    .how-order-wrapper p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      font-weight: 500;
+      text-align: justify;
+    }
+
+    .how-order-wrapper p strong {
+      font-weight: 800;
+    }
+
+    /* 🌐 Mobile: 300–600px */
+    @media (max-width: 600px) {
+      .how-order-wrapper {
+        padding: 20px 16px;
+      }
+
+      .how-order-title {
+        font-size: 22px;
+        text-align: left;
+      }
+
+      .how-order-wrapper p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 18px;
+      }
+    }
+
+    /* 🌐 Tablet: 601–768px */
+    @media (min-width: 601px) and (max-width: 768px) {
+      .how-order-wrapper {
+        padding: 30px 20px;
+      }
+
+      .how-order-title {
+        font-size: 26px;
+      }
+
+      .how-order-wrapper p {
+        font-size: 17px;
+      }
+    }

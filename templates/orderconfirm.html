@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Wed Knot Craft - Order Confirmation{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/orderconfirm.css') }}">
+
+{% endblock %}
+
+
+{% block content %}
+<div class="confirm-container">
+    <div class="confirm-circle">
+      <img src="{{ url_for('static', filename='images/confirm.png') }}" alt="Order Confirmed" class="confirm-image">
+    </div>
+  </div>
+  <div class="confirm-wrapper">
+    <div class="confirm-left">
+      <h2>Your Order</h2>
+      <p class="order-id">Order ID: {{ order.order_id }}</p>
+      <p class="order-thanks">Thank you! Your Order has been confirmed.</p>
+
+      <div class="product-box">
+        <img src="{{ url_for('static', filename=order.product_image) }}" class="product-img">
+        <div class="product-details">
+          <div class="sku">SKU: {{ order.sku_code }}</div>
+          <div class="sn">SN ({{ order.sn_code }})</div>
+        </div>
+        <div class="product-price">Rs. {{ '%.2f' | format(order.price) }}</div>
+      </div>
+
+      <div class="summary-box">
+        <h3>Order Summary</h3>
+        <div class="summary-row"><span>Subtotal</span><span>Rs. {{ '%.2f' | format(order.subtotal) }}</span></div>
+        <div class="summary-row"><span>Shipping Charge</span><span>Rs. {{ '%.2f' | format(order.shipping) }}</span></div>
+        <div class="summary-row"><span>Taxes</span><span>{{ (order.tax_rate * 100)|int }}%</span></div>
+        <div class="summary-row"><span>Discount</span><span>Rs. {{ '%.2f' | format(order.discount) }}</span></div>
+        <hr>
+        <div class="summary-total"><strong>Total</strong><strong>Rs. {{ '%.2f' | format(order.total) }}</strong></div>
+      </div>
+
+      <!-- <a href="{{ url_for('cards') }}" class="continue-btn">Continue Shopping</a> -->
+       <a href="{{ url_for('cards') }}" class="continue-btn" id="continueBtn">Continue Shopping</a>
+    </div>
+
+    <div class="confirm-right">
+      <div class="box">
+        <h3>Customer</h3>
+        <p><i class="fa fa-user"></i> {{ order.name }}</p>
+        <p><i class="fa fa-bag-shopping"></i> 1 order</p>
+      </div>
+
+      <div class="box">
+        <h3>Customer Information</h3>
+        <p><i class="fa fa-envelope"></i> {{ order.email }}</p>
+        <p><i class="fa fa-phone"></i> 1 order</p>
+      </div>
+
+      <div class="box">
+        <h3>Shipping Address</h3>
+        <p><i class="fa fa-location-dot"></i> {{ order.name }}</p>
+        <p>{{ order.address.replace('\n', '<br>')|safe }}</p>
+      </div>
+
+      <div class="box">
+        <h3>Billing Address</h3>
+        <p>Same as Shipping address</p>
+      </div>
+    </div>
+  </div>
+  <script>
+  document.getElementById('continueBtn').addEventListener('click', function () {
+    localStorage.clear();  // ✅ Clears local storage on click
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Wed Knot Craft - Hindu Wedding Cards{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/hindu.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<h1 class="page-title">HINDU WEDDING CARDS</h1>
+  <div class="card-grid">
+    {% for card in cards %}
+    
+    <div class="card">
+
+      <div class="img-wrapper">
+        <a href="{{ url_for('buy', card_id=card.id) }}">
+
+        <img src="{{ url_for('static', filename=card.image) }}" alt="{{ card.title }}"></a>
+        <button class="heart-btn {% if card.id in wishlist %}active{% endif %}" onclick="toggleWishlist({{ card.id }}, this)">&#10084;</button>
+      </div>
+      <div class="card-info">
+        <h3>{{ card.title }}</h3>
+        <p class="price">Rs. {{ '%.2f'|format(card.price) }}</p>
+      </div>
+    </div>
+  
+    {% endfor %}
+  </div>
+
+<script>
+function toggleWishlist(cardId, btn) {
+  fetch(`/toggle-wishlist/${cardId}`, { method: 'POST' })
+    .then(res => res.json())
+    .then(data => {
+      if (data.in_wishlist) btn.classList.add('active');
+      else btn.classList.remove('active');
+    });
+}
+</script>
+{% endblock %}
