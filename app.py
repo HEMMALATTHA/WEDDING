@@ -1,6 +1,6 @@
 from flask import Flask, render_template, session, jsonify, request, redirect, url_for, flash
 
-from flask_session import Session
+
 import re
 from datetime import datetime
 import random
@@ -8,7 +8,7 @@ import random
 app = Flask(__name__)
 app.secret_key = 'supersecret'
 app.config['SESSION_TYPE'] = 'filesystem'
-Session(app)
+
 
 
 # Dummy database
